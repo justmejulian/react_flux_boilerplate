@@ -4,16 +4,12 @@ import React, { Component } from 'react';
 import * as Actions from '../../actions/Actions.js';
 import Store from '../../stores/Store.js';
 
-class FluxExample extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      name: Store.getName()
-    };
+import './FluxExample.sass';
 
-    this.refreshName = this.refreshName.bind(this);
-    this.handleChangeTextField = this.handleChangeTextField.bind(this);
-  }
+class FluxExample extends Component {
+  state = {
+    name: Store.getName()
+  };
 
   // Bind change listener
   componentWillMount() {
@@ -25,15 +21,15 @@ class FluxExample extends Component {
     Store.removeListener('name_changed', this.refreshName);
   }
 
-  refreshName() {
+  refreshName = () => {
     this.setState({
       name: Store.getName()
     });
-  }
+  };
 
-  handleChangeTextField(event) {
+  handleChangeTextField = event => {
     Actions.setName(event.target.value);
-  }
+  };
   render() {
     return (
       <div>

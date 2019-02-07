@@ -5,7 +5,7 @@ import * as Actions from './actions/Actions.js';
 
 import Store from './stores/Store.js';
 
-import FluxExample from './containers/FluxExample/FluxExample.js';
+import FluxExample from './containers/FluxExample/FluxExample.jsx';
 
 class App extends Component {
   constructor(props) {
